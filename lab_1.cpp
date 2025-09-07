@@ -68,6 +68,7 @@ int main() {
 // Inserts a new (username, password) at the END of the list.
 // If username already exists, do NOT insert a duplicate; return false.
 // Otherwise insert and return true.
+//runtime: O(n)
 bool insertUser(User*& head, const string& username, const string& password) {
     // TODO: implement
     User* current = head;
@@ -91,6 +92,7 @@ bool insertUser(User*& head, const string& username, const string& password) {
 }
 
 // Returns pointer to the node with matching username; otherwise nullptr.
+//runtime: O(n)
 User* findUser(User* head, const string& username) {
     // TODO: implement
     User* current = head;
@@ -104,6 +106,7 @@ User* findUser(User* head, const string& username) {
 }
 
 // Returns true if (username, password) matches an existing node; false otherwise.
+//runtime: O(n)
 bool authenticate(User* head, const string& username, const string& password) {
     // TODO: implement
     User* current = head;
@@ -118,6 +121,7 @@ bool authenticate(User* head, const string& username, const string& password) {
 
 // Deletes the FIRST node (head) and updates head. No-op if list is empty.
 // Return true if a node was deleted, false otherwise.
+//runtime: O(1)
 bool removeFront(User*& head) {
     // TODO: implement
     if(head == nullptr){
@@ -132,6 +136,7 @@ bool removeFront(User*& head) {
 
 // Deletes the node with matching username (first match only).
 // Return true if a node was found & deleted; false if not found.
+//runtime: O(n)
 bool removeByUsername(User*& head, const string& username) {
 
     // TODO: implement
@@ -162,6 +167,7 @@ bool removeByUsername(User*& head, const string& username) {
     return false;
 }
 // Deletes ALL nodes and sets head=nullptr. 
+//runtime: O(n)
 void clearList(User*& head) {
     // TODO: implement
     User* current = head;
@@ -174,6 +180,7 @@ void clearList(User*& head) {
 }
 
 // Returns number of nodes.
+//runtime: O(n)
 size_t size(User* head) {
     // TODO: implement
     User* current = head;
@@ -187,6 +194,7 @@ size_t size(User* head) {
 
 // Prints usernames in order, separated by " -> " then " -> NULL".
 // Example: alice -> bob -> charlie -> NULL
+//runtime: O(n)
 void printUsers(User* head) {
     User* current = head;
     while (current != nullptr) {
