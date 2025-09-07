@@ -85,7 +85,12 @@ User* findUser(User* head, const string& username) {
 // Returns true if (username, password) matches an existing node; false otherwise.
 bool authenticate(User* head, const string& username, const string& password) {
     // TODO: implement
-   
+    User* current = head;
+    while(current != nullptr){
+     if(current->username == username && current->password == password){
+       return true;
+      }
+    }
     return false;
 }
 
