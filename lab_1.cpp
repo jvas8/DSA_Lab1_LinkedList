@@ -111,11 +111,34 @@ bool removeFront(User*& head) {
 // Deletes the node with matching username (first match only).
 // Return true if a node was found & deleted; false if not found.
 bool removeByUsername(User*& head, const string& username) {
+
     // TODO: implement
-    
+    if (head == nullptr) {
+        return false;
+    }
+
+    if (head->username == username) {
+        User* temp = head;
+        head = head->next;
+        delete temp;
+        return true;
+    }
+
+    User* prev = head;
+    User* current = head->next;
+
+    while (current != nullptr) {
+        if (current->username == username) {
+            prev->next = current->next;
+            delete current;
+            return true;
+        }
+        prev = current;
+        current = current->next;
+    }
+
     return false;
 }
-
 // Deletes ALL nodes and sets head=nullptr. 
 void clearList(User*& head) {
     // TODO: implement
