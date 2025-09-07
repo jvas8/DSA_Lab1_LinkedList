@@ -98,8 +98,14 @@ bool authenticate(User* head, const string& username, const string& password) {
 // Return true if a node was deleted, false otherwise.
 bool removeFront(User*& head) {
     // TODO: implement
-    
-    return false;
+    if(head == nullptr){
+     return false
+   }
+
+    User* temp = head;
+    head = head-> next;
+    delete temp;
+    return true;
 }
 
 // Deletes the node with matching username (first match only).
