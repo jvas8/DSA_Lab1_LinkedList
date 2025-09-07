@@ -154,8 +154,13 @@ void clearList(User*& head) {
 // Returns number of nodes.
 size_t size(User* head) {
     // TODO: implement
-    
-    return 0;
+    User* current = head;
+   size_t count = 0;
+    while(current != nullptr){
+     count++;
+     current = current->next;
+    }
+    return count;
 }
 
 // Prints usernames in order, separated by " -> " then " -> NULL".
