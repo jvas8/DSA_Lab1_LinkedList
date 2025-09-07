@@ -36,7 +36,28 @@ struct User {
 int main() {
   
     // Write code here to test your implementation
-    
+    User* head = nullptr;
+
+    // Insert a few users
+    insertUser(head, "alice", "123");
+    insertUser(head, "bob", "456");
+    insertUser(head, "charlie", "789");
+    printUsers(head);
+
+    // test duplicate
+    cout << (insertUser(head, "alice", "000") ? "Inserted" : "Duplicate not allowed") << endl;
+
+    // Find and  Authenticate
+    cout << (findUser(head, "bob") ? "bob found" : "bob not found") << endl;
+    cout << (authenticate(head, "bob", "456") ? "Auth success" : "Auth failed") << endl;
+
+    // remove a user
+    removeByUsername(head, "charlie");
+    printUsers(head);
+
+    // clear all
+    clearList(head);
+    printUsers(head);
     return 0;
 }
 
