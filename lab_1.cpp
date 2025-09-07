@@ -61,7 +61,7 @@ bool insertUser(User*& head, const string& username, const string& password) {
      return true;
     }
     current = head;
-    while(curent->next != nullptr){
+    while(current->next != nullptr){
        current = current->next;
     }
     current->next = new User(username, password);
@@ -75,7 +75,7 @@ User* findUser(User* head, const string& username) {
     User* current = head;
     while(current != nullptr){
       if(current->username == username){
-        return true;
+        return current;
       }
       current = current-> next;
     }
@@ -90,6 +90,7 @@ bool authenticate(User* head, const string& username, const string& password) {
      if(current->username == username && current->password == password){
        return true;
       }
+     current = current->next;
     }
     return false;
 }
@@ -99,7 +100,7 @@ bool authenticate(User* head, const string& username, const string& password) {
 bool removeFront(User*& head) {
     // TODO: implement
     if(head == nullptr){
-     return false
+     return false;
    }
 
     User* temp = head;
@@ -146,7 +147,7 @@ void clearList(User*& head) {
     while(current != nullptr){
      User* temp = current;
      current = current-> next;
-    delete temp
+    delete temp;
     }
    head = nullptr;
 }
