@@ -33,6 +33,14 @@ struct User {
 };
 
 
+bool insertUser(User*& head, const string& username, const string& password);
+User* findUser(User* head, const string& username);
+bool authenticate(User* head, const string& username, const string& password);
+bool removeFront(User*& head);
+bool removeByUsername(User*& head, const string& username);
+void clearList(User*& head);
+size_t size(User* head);
+void printUsers(User* head);
 int main() {
   
     // Write code here to test your implementation
@@ -88,7 +96,7 @@ bool insertUser(User*& head, const string& username, const string& password) {
     }
     current->next = new User(username, password);
    
-    return false;
+    return true;
 }
 
 // Returns pointer to the node with matching username; otherwise nullptr.
