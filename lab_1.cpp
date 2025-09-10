@@ -41,6 +41,7 @@ bool removeByUsername(User*& head, const string& username);
 void clearList(User*& head);
 size_t size(User* head);
 void printUsers(User* head);
+
 int main() {
   
     // Write code here to test your implementation
